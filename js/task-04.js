@@ -4,11 +4,11 @@ counterEl.textContent = counterValue;
 const decrementBtn = document.querySelector('button[data-action="decrement"]');
 const incrementBtn = document.querySelector('button[data-action="increment"]');
 
-const handleDecrementBtnClick = (event) => {
+const handleDecrementBtnClick = () => {
   counterValue -= 1;
   counterEl.textContent = counterValue;
 };
-const handleIncrementBtnClick = (event) => {
+const handleIncrementBtnClick = () => {
   counterValue += 1;
   counterEl.textContent = counterValue;
 };
