@@ -9,31 +9,28 @@ const input = document.querySelector("input");
 const createBtn = document.querySelector("[data-create]");
 const cleanBtn = document.querySelector("[data-destroy]");
 const divOfBoxes = document.querySelector("#boxes");
-let amount;
 
-input.addEventListener("input", (event) => {
-  amount = event.currentTarget.value;
-});
-createBtn.addEventListener("click", createBoxes());
-cleanBtn.addEventListener("click", destroyBoxes());
+createBtn.addEventListener("click", createBoxes);
+cleanBtn.addEventListener("click", destroyBoxes);
 
 function createBoxes(event) {
-  // const amount = input.value;
+  const amount = input.value;
   // console.log(input.value);
   let boxSize = 30;
+  const newBoxArray = [];
 
   for (let i = 0; i < amount; i += 1) {
     const newBox = document.createElement("div");
     newBox.style.width = `${boxSize}px`;
     newBox.style.height = `${boxSize}px`;
     newBox.style.backgroundColor = getRandomHexColor();
-    divOfBoxes.append(newBox);
+    newBoxArray.push(newBox);
     boxSize += 10;
   }
+  console.log(...newBoxArray);
+  divOfBoxes.append(...newBoxArray);
 }
 
 function destroyBoxes() {
   divOfBoxes.innerHTML = "";
 }
-
-// Не розумію чому не працює, буду чекати на ваші коментарі
